@@ -1,0 +1,12 @@
+<h3>Todo Show</h3>
+<p><%=@todo.id%></p>
+<p>person responsible: <%=@todo.user.name%></p>
+<p>task: <%=@todo.content%></p>
+<p>status: <%= @todo.completed ? "Completed!": " Get on it!!" %></p>
+
+<a href="/todos/<%=@todo.id%>/edit"><button> edit </button></a>
+
+<form action="/todos/<%= @todo.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="delete">
+</form>

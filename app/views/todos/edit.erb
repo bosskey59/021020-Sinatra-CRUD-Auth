@@ -1,0 +1,8 @@
+<h1>Todo Edit Page</h1>
+<form action="/todos/<%= @todo.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <label>Todo Content</label>
+    <input type="text" name="todo[content]" value="<%= @todo.content%>">
+    <input type="checkbox" name="todo[completed]" <%= @todo.completed ? "checked" : nil%>>
+    <input type="submit">
+</form>
